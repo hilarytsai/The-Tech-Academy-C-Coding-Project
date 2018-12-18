@@ -30,7 +30,7 @@ namespace InsuranceApp.Controllers
 
             else
             {
-               
+
                 DateTime Dob = Convert.ToDateTime(DateOfBirth);
                 int age = 0;
                 age = DateTime.Now.Year - Dob.Year;
@@ -44,13 +44,17 @@ namespace InsuranceApp.Controllers
                 {
                     total = total + 25;
                 }
-                else if (age < 18)
+
+                bool under18 = age < 18;
+                if (under18)
                 {
+
                     total = total + 100;
                 }
+
                 else
                 {
-                    total = 50;
+                    total = total;
                 }
 
 
@@ -67,7 +71,7 @@ namespace InsuranceApp.Controllers
                     total = total;
                 }
 
-                if (CarMake == "Porsche".ToLower())
+                if (CarMake == "porsche".ToLower())
                 {
                     total = total + 25;
                 }
@@ -75,7 +79,7 @@ namespace InsuranceApp.Controllers
                 {
                     total = total;
                 }
-                if (CarMake == "Porsche".ToLower() && CarModel == "911 Carrera".ToLower())
+                if (CarMake == "porsche".ToLower() && CarModel == "911 Carrera".ToLower())
                 {
                     total = total + 25;
                 }
@@ -90,7 +94,7 @@ namespace InsuranceApp.Controllers
 
                 total = total + ticketTotal;
 
-                bool Dui = DUI == "Yes".ToLower();
+                bool Dui = DUI == "yes".ToLower();
                 if (Dui)
                 {
                     total = total + (total * .25);
@@ -100,7 +104,7 @@ namespace InsuranceApp.Controllers
                     total = total;
                 }
 
-                bool FullCoverage = Coverage == "Full Coverage".ToLower() || Coverage == "Full".ToLower();
+                bool FullCoverage = Coverage == "full Coverage".ToLower() || Coverage == "full".ToLower();
 
                 if (FullCoverage)
                 {
@@ -111,9 +115,9 @@ namespace InsuranceApp.Controllers
                     total = total;
                 }
 
-               double Quote = total;
+                double Quote = total;
 
-                ViewBag.Quote ="$"+ Quote;
+                ViewBag.Quote = "$" + Quote;
 
                 using (QuotesEntities db = new QuotesEntities())
                 {
@@ -127,17 +131,17 @@ namespace InsuranceApp.Controllers
                     db.Quotes.Add(Quotes);
                     db.SaveChanges();
 
-                    
+
                 }
 
-                    return View("Success");
+                return View("Success");
             }
-           
-               
-               }
 
 
-
-            }
         }
-    
+
+
+
+    }
+}
+
