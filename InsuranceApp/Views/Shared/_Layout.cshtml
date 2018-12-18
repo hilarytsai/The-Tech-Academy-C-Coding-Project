@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Insurance</title>
+    @Styles.Render("~/Content/css")
+
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
+            <a class="navbar-brand" href="/"><bold>Awesome Car Insurance</bold></a>
+            <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="/Admin" class="nav-link">Admin Page</a></li>
+                    <li class="nav-item"><a href="/Home/Index" class="nav-link"> Get your Quote!</a></li>
+                </ul>
+
+               
+
+            </div>
+        </div>
+    </nav>
+</head>
+<body>
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
