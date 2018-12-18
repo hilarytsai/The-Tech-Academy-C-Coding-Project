@@ -104,7 +104,7 @@ namespace InsuranceApp.Controllers
                     total = total;
                 }
 
-                bool FullCoverage = Coverage == "full Coverage".ToLower() || Coverage == "full".ToLower();
+                bool FullCoverage = Coverage == "full coverage".ToLower() || Coverage == "full".ToLower();
 
                 if (FullCoverage)
                 {

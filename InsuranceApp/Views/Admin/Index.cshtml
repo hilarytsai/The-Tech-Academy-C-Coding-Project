@@ -4,39 +4,43 @@
 <div class="row no-gutters m-3">
     <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto shadow">
         <div class="card-header text-center">
-            <h5 class="m-0">Quotes</h5>
+           
         </div>
+        <div>
+            <h1 style="text-align:center; padding-top:40px;"><strong>Quotes Issued</strong></h1>
+        </div>
+        
         <div class="card-body">
             @foreach (var Quote in Model)
             {
                 using (Html.BeginForm("Remove", "Admin", FormMethod.Post))
                 {
-                    <input type="hidden" name="Id" value="@Quote.Id" /> 
+                    <input type="hidden" name="Id" value="@Quote.Id" />
                     <div class="row mb-3">
                         <div class="col-2">
 
                         </div>
                     </div>
-                <div class="row">
-                    <div class="col-2">
-                        @Quote.FirstName
+                    <div class="row">
+                        <div class="col-2">
+                            @Quote.FirstName
+                        </div>
+                        <div class="col">
+                            @Quote.LastName
+                        </div>
+                        <div class="col-4">
+                            @Quote.EmailAddress
+                        </div>
+                        <div class="col">
+                            @Quote.Quote
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-inverse btn-block">
+                                Remove Entry
+                            </button>
+                        </div>
                     </div>
-                    <div class="col">
-                        @Quote.LastName
-                    </div>
-                    <div class="col-4">
-                        @Quote.EmailAddress
-                    </div>
-                    <div class="col">
-                        @Quote.Quote
-                    </div>
-                    <div class="col">
-                        <button type="submit" class="btn btn-inverse btn-block">
-                            Remove Entry
-                        </button>
-                    </div>
-                </div>
-                
+
                 }
             }
         </div>
