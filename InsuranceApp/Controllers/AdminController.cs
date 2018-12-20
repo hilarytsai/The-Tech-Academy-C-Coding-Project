@@ -9,7 +9,6 @@ namespace InsuranceApp.Controllers
 {
     public class AdminController : Controller
     {
-        // GET: Admin
         public ActionResult Index()
         {
             using (QuotesEntities db = new QuotesEntities())
@@ -27,11 +26,8 @@ namespace InsuranceApp.Controllers
                     QuoteVm.Quote = Convert.ToDouble(Quotes.Quote);
                     QuoteVm.FirstName = Quotes.FirstName;
                     QuoteVm.LastName = Quotes.LastName;
-                    QuoteVm.EmailAddress = Quotes.EmailAddress;
-                    //QuoteVm.Quote = Quotes.Quote;
+                    QuoteVm.EmailAddress = Quotes.EmailAddress;                   
                     QuoteVms.Add(QuoteVm);
-
-
                 }
                 return View(QuoteVms);
             }

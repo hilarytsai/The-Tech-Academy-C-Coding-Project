@@ -15,12 +15,12 @@
             {
                 using (Html.BeginForm("Remove", "Admin", FormMethod.Post))
                 {
+                    <h5>First Name<span style="margin-left:50px;">Last Name</span><span style="margin-left:50px;">Email Address</span><span style="margin-left:190px;">Quote</span></h5>
                     <input type="hidden" name="Id" value="@Quote.Id" />
                     <div class="row mb-3">
                         <div class="col-2">
-
-                        </div>
                     </div>
+                </div>
                     <div class="row">
                         <div class="col-2">
                             @Quote.FirstName
@@ -40,7 +40,6 @@
                             </button>
                         </div>
                     </div>
-
                 }
             }
         </div>

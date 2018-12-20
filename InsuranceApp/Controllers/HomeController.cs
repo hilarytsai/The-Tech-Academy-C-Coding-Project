@@ -71,7 +71,7 @@ namespace InsuranceApp.Controllers
                     total = total;
                 }
 
-                if (CarMake == "porsche".ToLower())
+                if (CarMake == "porsche"||CarMake=="Porsche")
                 {
                     total = total + 25;
                 }
@@ -79,7 +79,7 @@ namespace InsuranceApp.Controllers
                 {
                     total = total;
                 }
-                if (CarMake == "porsche".ToLower() && CarModel == "911 Carrera".ToLower())
+                if (CarMake == "porsche" && CarModel == "911 Carrera" ||CarMake== "Porsche" && CarModel == "911 Carrera")
                 {
                     total = total + 25;
                 }
@@ -94,7 +94,7 @@ namespace InsuranceApp.Controllers
 
                 total = total + ticketTotal;
 
-                bool Dui = DUI == "yes".ToLower();
+                bool Dui = DUI == "yes"||DUI=="Yes";
                 if (Dui)
                 {
                     total = total + (total * .25);
@@ -104,7 +104,7 @@ namespace InsuranceApp.Controllers
                     total = total;
                 }
 
-                bool FullCoverage = Coverage == "full coverage".ToLower() || Coverage == "full".ToLower();
+                bool FullCoverage = Coverage == "full coverage" || Coverage == "full" || Coverage == "Full Coverage" || Coverage == "Full";
 
                 if (FullCoverage)
                 {
@@ -130,18 +130,10 @@ namespace InsuranceApp.Controllers
 
                     db.Quotes.Add(Quotes);
                     db.SaveChanges();
-
-
                 }
-
                 return View("Success");
             }
-
-
         }
-
-
-
     }
 }
 
